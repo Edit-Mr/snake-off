@@ -1,14 +1,14 @@
 input.onPinPressed(TouchPin.P0, function () {
-    蛇頭.turn(Direction.Right, 90)
+    蛇頭.turn(Direction.Left, 90)
 })
 input.onButtonPressed(Button.A, function () {
-    蛇頭.turn(Direction.Right, 90)
+    蛇頭.turn(Direction.Left, 90)
 })
 input.onButtonPressed(Button.B, function () {
-    蛇頭.turn(Direction.Left, 90)
+    蛇頭.turn(Direction.Right, 90)
 })
 input.onPinPressed(TouchPin.P1, function () {
-    蛇頭.turn(Direction.Left, 90)
+    蛇頭.turn(Direction.Right, 90)
 })
 let i = 0
 let 蛇身各節: game.LedSprite[] = []
