@@ -1,17 +1,26 @@
 input.onPinPressed(TouchPin.P0, function () {
-    蛇頭.turn(Direction.Left, 90)
+    if (force > 100) {
+        蛇頭.turn(Direction.Left, 90)
+    }
 })
 input.onButtonPressed(Button.A, function () {
-    蛇頭.turn(Direction.Left, 90)
+    if (force <= 100) {
+        蛇頭.turn(Direction.Left, 90)
+    }
 })
 input.onButtonPressed(Button.B, function () {
-    蛇頭.turn(Direction.Right, 90)
+    if (force <= 100) {
+        蛇頭.turn(Direction.Right, 90)
+    }
 })
 input.onPinPressed(TouchPin.P1, function () {
-    蛇頭.turn(Direction.Right, 90)
+    if (force > 100) {
+        蛇頭.turn(Direction.Right, 90)
+    }
 })
 let i = 0
 let 蛇身各節: game.LedSprite[] = []
+let force = 0
 let 蛇頭: game.LedSprite = null
 蛇頭 = game.createSprite(1, 2)
 let 水果 = game.createSprite(randint(0, 4), randint(0, 4))
@@ -21,6 +30,9 @@ let 蛇X陣列 = [1]
 let 蛇Y陣列 = [2]
 let 蛇身長度 = 0
 game.setScore(0)
+basic.forever(function () {
+    force = Math.abs(input.magneticForce(Dimension.Strength))
+})
 basic.forever(function () {
     if (蛇頭.isTouching(水果)) {
         game.addScore(1)
