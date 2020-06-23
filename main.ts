@@ -1,18 +1,77 @@
 input.onPinPressed(TouchPin.P0, function () {
     蛇頭.turn(Direction.Left, 90)
+    if (Direction2 == 0) {
+        Direction2 = 3
+    } else {
+        Direction2 += -1
+    }
+    if (Direction2 == 0) {
+        music.playTone(523, music.beat(BeatFraction.Eighth))
+    } else if (Direction2 == 1) {
+        music.playTone(587, music.beat(BeatFraction.Eighth))
+    } else if (Direction2 == 2) {
+        music.playTone(659, music.beat(BeatFraction.Eighth))
+    } else {
+        music.playTone(698, music.beat(BeatFraction.Eighth))
+    }
 })
 input.onButtonPressed(Button.A, function () {
     蛇頭.turn(Direction.Left, 90)
+    if (Direction2 == 0) {
+        Direction2 = 3
+    } else {
+        Direction2 += -1
+    }
+    if (Direction2 == 0) {
+        music.playTone(523, music.beat(BeatFraction.Eighth))
+    } else if (Direction2 == 1) {
+        music.playTone(587, music.beat(BeatFraction.Eighth))
+    } else if (Direction2 == 2) {
+        music.playTone(659, music.beat(BeatFraction.Eighth))
+    } else {
+        music.playTone(698, music.beat(BeatFraction.Eighth))
+    }
 })
 input.onButtonPressed(Button.B, function () {
     蛇頭.turn(Direction.Right, 90)
+    if (Direction2 == 3) {
+        Direction2 = 0
+    } else {
+        Direction2 += 1
+    }
+    if (Direction2 == 0) {
+        music.playTone(523, music.beat(BeatFraction.Eighth))
+    } else if (Direction2 == 1) {
+        music.playTone(587, music.beat(BeatFraction.Eighth))
+    } else if (Direction2 == 2) {
+        music.playTone(659, music.beat(BeatFraction.Eighth))
+    } else {
+        music.playTone(698, music.beat(BeatFraction.Eighth))
+    }
 })
 input.onPinPressed(TouchPin.P1, function () {
     蛇頭.turn(Direction.Right, 90)
+    if (Direction2 == 3) {
+        Direction2 = 0
+    } else {
+        Direction2 += 1
+    }
+    if (Direction2 == 0) {
+        music.playTone(523, music.beat(BeatFraction.Eighth))
+    } else if (Direction2 == 1) {
+        music.playTone(587, music.beat(BeatFraction.Eighth))
+    } else if (Direction2 == 2) {
+        music.playTone(659, music.beat(BeatFraction.Eighth))
+    } else {
+        music.playTone(698, music.beat(BeatFraction.Eighth))
+    }
 })
 let i = 0
 let 蛇身各節: game.LedSprite[] = []
 let 蛇頭: game.LedSprite = null
+let Direction2 = 0
+Direction2 = 1
+music.playMelody("C D E F G A B C5 ", 300)
 蛇頭 = game.createSprite(1, 2)
 let 水果 = game.createSprite(randint(0, 4), randint(0, 4))
 水果.set(LedSpriteProperty.Blink, 100)
