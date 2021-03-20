@@ -1,4 +1,4 @@
-
+## This project had been replaced by [https://github.com/Edit-Mr/snake-offv2](snake-offv2)!!Please stop using this project
 > Open this page at [https://edit-mr.github.io/snake-off/](https://edit-mr.github.io/snake-off/)
 
 ## Use as Extension
